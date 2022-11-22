@@ -1,0 +1,444 @@
+<div class="row">
+  <div class="col-md-10 offset-md-1">
+    <div class="container-fluid jumbotron mb-5">
+      <h1 class="display-4">Prueba Vark</h1>
+      <hr class="my-4" />
+      <p>
+        Evalúe cada par de opciones de las columnas usando del 0 al 10 para
+        calificar la que mejor le describe. Podra sentirse identificado con
+        cualidades de ambas columnas, pero tiene solo 10 puntos para repartir
+        entre cada una de las opciones
+        <span class="fw-bold">SIN UTILIZAR EL NÚMERO 5</span>.
+      </p>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <form action="post" [formGroup]="varkTestForm">
+          <p>
+            <strong
+              >1. Usted cocinará algo especial para su familia. Usted
+              haría:</strong
+            >
+          </p>
+          <ol type="a">
+            <li>
+              <input type="radio" formControlName="0" value="a" />
+              Preguntar a amigos por sugerencias.
+            </li>
+            <li>
+              <input type="radio" formControlName="1" value="b" /> Dar una vista
+              al recetario por formControlNameeas de las fotos.
+            </li>
+            <li>
+              <input type="radio" formControlName="2" value="c" />
+              Usar un libro de cocina donde usted sabe hay una buena receta.
+            </li>
+            <li>
+              <input type="radio" formControlName="3" value="d" />
+              Cocinar algo que usted sabe sin la necesformControlNamead de
+              instrucciones.
+            </li>
+          </ol>
+          <p>
+            <strong
+              >2. Usted escogerá alimento en un restaurante o un café. Usted
+              haría:</strong
+            >
+          </p>
+          <ol type="a">
+            <li>
+              <input type="radio" formControlName="4" value="a" />
+              Escuchar al mesero o pedir que amigos recomienden opciones.
+            </li>
+            <li>
+              <input type="radio" formControlName="5" value="b" />
+              Mirar lo qué otros comen o mirar dibujos de cada platillo.
+            </li>
+            <li>
+              <input type="radio" formControlName="6" value="c" />
+              Escoger de las descripciones en el menú.
+            </li>
+            <li>
+              <input type="radio" formControlName="7" value="d" />Escoger algo
+              que tienes o has tenformControlNameo antes.
+            </li>
+          </ol>
+          <p>
+            <strong
+              >3. Aparte del precio, qué más te influenciaría para comprar un
+              libro de ciencia ficción</strong
+            >
+          </p>
+          <ol type="a">
+            <li>
+              <input type="radio" formControlName="8" value="a" /> Un amigo
+              habla acerca de él y te lo recomienda.
+            </li>
+            <li>
+              <input type="radio" formControlName="9" value="b" />
+              Tienes historias reales, experiencias y ejemplos.
+            </li>
+            <li>
+              <input type="radio" formControlName="10" value="c" />
+              Leyendo rápformControlNameamente partes de él.
+            </li>
+            <li>
+              <input type="radio" formControlName="11" value="d" />El diseño de
+              la pasta es atractivo.
+            </li>
+          </ol>
+          <p>
+            <strong
+              >4. Usted ha terminado una competencia o un examen y le gustaría
+              tener alguna retroalimentación. Te gustaría
+              retroalimentarte:</strong
+            >
+          </p>
+          <ol type="a">
+            <li>
+              <input type="radio" formControlName="12" value="a" />
+              Usando descripciones escritas de los resultados.
+            </li>
+            <li>
+              <input type="radio" formControlName="13" value="b" />
+              Usando ejemplos de lo que usted ha hecho.
+            </li>
+            <li>
+              <input type="radio" formControlName="14" value="c" />
+              Usando gráficos que muestran lo que usted ha logrado.
+            </li>
+            <li>
+              <input type="radio" formControlName="15" value="d" /> De alguien
+              que habla por usted.
+            </li>
+          </ol>
+          <p>
+            <strong
+              >5. Usted tiene un problema con la rodilla. Usted preferiría que
+              el doctor:</strong
+            >
+          </p>
+          <ol type="a">
+            <li>
+              <input type="radio" formControlName="16" value="a" /> Use un
+              modelo de plástico y te enseñe lo que está mal.
+            </li>
+            <li>
+              <input type="radio" formControlName="17" value="b" /> Te de una
+              página de internet o algo para leer.
+            </li>
+            <li>
+              <input type="radio" formControlName="18" value="c" /> Te describa
+              lo qué está mal.
+            </li>
+            <li>
+              <input type="radio" formControlName="19" value="d" /> Te enseñe un
+              diagrama lo que está mal.
+            </li>
+          </ol>
+          <p>
+            <strong
+              >6. Usted está a punto de comprar una cámara digital o teléfono o
+              móvil. ¿Aparte del precio qué más influirá en tomar tu
+              decisión?</strong
+            >
+          </p>
+          <ol type="a">
+            <li>
+              <input type="radio" formControlName="20" value="a" />
+              Probándolo.
+            </li>
+            <li>
+              <input type="radio" formControlName="21" value="b" /> Es un diseño
+              moderno y se mira bien.
+            </li>
+            <li>
+              <input type="radio" formControlName="22" value="c" />
+              Leer los detalles acerca de sus características.
+            </li>
+            <li>
+              <input type="radio" formControlName="23" value="d" /> El vendedor
+              me informa acerca de sus características.
+            </li>
+          </ol>
+          <p>
+            <strong
+              >7. Usted no está seguro como se deletrea trascendente o
+              tracendente ¿Ud. qué haría?</strong
+            >
+          </p>
+          <ol type="a">
+            <li>
+              <input type="radio" formControlName="24" value="a" />
+              Escribir ambas palabras en un papel y escojo una.
+            </li>
+            <li>
+              <input type="radio" formControlName="25" value="b" />
+              Pienso cómo suena cada palabra y escojo una.
+            </li>
+            <li>
+              <input type="radio" formControlName="26" value="c" />
+              Busco la palabra en un diccionario.
+            </li>
+            <li>
+              <input type="radio" formControlName="27" value="d" /> Veo la
+              palabra en mi mente y escojo según como la veo.
+            </li>
+          </ol>
+          <p><strong>8. Me gustan páginas de Internet que tienen:</strong></p>
+          <ol type="a">
+            <li>
+              <input type="radio" formControlName="28" value="a" />
+              Interesantes descripciones escritas, listas y explicaciones.
+            </li>
+            <li>
+              <input type="radio" formControlName="29" value="b" />
+              Diseño interesante y características visuales.
+            </li>
+            <li>
+              <input type="radio" formControlName="30" value="c" />
+              Cosas que con un click pueda cambiar o examinar.
+            </li>
+            <li>
+              <input type="radio" formControlName="31" value="d" />
+              Canales donde puedo oír música, programas de radio o entrevistas.
+            </li>
+          </ol>
+          <p>
+            <strong
+              >9. Usted está planeando unas vacaciones para un grupo. Usted
+              quiere alguna observación de ellos acerca del plan. Usted qué
+              haría:</strong
+            >
+          </p>
+          <ol type="a">
+            <li>
+              <input type="radio" formControlName="32" value="a" /> Usa un mapa
+              o página de Internet para mostrarles los lugares.
+            </li>
+            <li>
+              <input type="radio" formControlName="33" value="b" />
+              Describe algunos de los puntos sobresalientes.
+            </li>
+            <li>
+              <input type="radio" formControlName="34" value="c" />
+              Darles una copia del itinerario impreso.
+            </li>
+            <li>
+              <input type="radio" formControlName="35" value="d" />
+              Llamarles por teléfono o mandar mensaje por correo electrónico.
+            </li>
+          </ol>
+          <p>
+            <strong
+              >10. Usted está usando un libro, disco compacto o página de
+              Internet para aprender a tomar fotos con su cámara digital nueva.
+              Usted le gustaría tener:</strong
+            >
+          </p>
+          <ol type="a">
+            <li>
+              <input type="radio" formControlName="36" value="a" />
+              Una oportunformControlNamead de hacer preguntas acerca de la
+              cámara y sus características.
+            </li>
+            <li>
+              <input type="radio" formControlName="37" value="b" />
+              Esquemas o diagramas que muestran la cámara y la función de cada
+              parte
+            </li>
+            <li>
+              <input type="radio" formControlName="38" value="c" />
+              Ejemplos de buenas y malas fotos y cómo mejorarlas.
+            </li>
+            <li>
+              <input type="radio" formControlName="39" value="d" />
+              Aclarar las instrucciones escritas con listas y puntos sobre qué
+              hacer.
+            </li>
+          </ol>
+          <p>
+            <strong
+              >11. Usted quiere aprender un programa nuevo,
+              habilformControlNamead o juego en una computadora. Usted qué
+              hace:</strong
+            >
+          </p>
+          <ol type="a">
+            <li>
+              <input type="radio" formControlName="40" value="a" />
+              Hablar con gente que sabe acerca del programa.
+            </li>
+            <li>
+              <input type="radio" formControlName="41" value="b" />
+              Leer las instrucciones que vienen en el programa.
+            </li>
+            <li>
+              <input type="radio" formControlName="42" value="c" />
+              Seguir los esquemas en el libro que acompaña el programa.
+            </li>
+            <li>
+              <input type="radio" formControlName="43" value="d" />
+              Use los controles o el teclado.
+            </li>
+          </ol>
+          <p>
+            <strong
+              >12. Estás ayudando a alguien que quiere a ir al aeropuerto, al
+              centro del pueblo o la estación del ferrocarril. Usted
+              hace:</strong
+            >
+          </p>
+          <ol type="a">
+            <li>
+              <input type="radio" formControlName="44" value="a" />
+              Va con la persona.
+            </li>
+            <li>
+              <input type="radio" formControlName="45" value="b" />
+              Anote las direcciones en un papel (sin mapa).
+            </li>
+            <li>
+              <input type="radio" formControlName="46" value="c" />
+              Les dice las direcciones.
+            </li>
+            <li>
+              <input type="radio" formControlName="47" value="d" />
+              Les dibuja un croquis o les da un mapa.
+            </li>
+          </ol>
+          <p>
+            <strong
+              >13. Recuerde un momento en su vformControlNamea en que Ud.
+              aprendió a hacer algo nuevo. Trate de evitar escoger una destreza
+              física, como andar en bicicleta. Ud. Aprendió mejor:</strong
+            >
+          </p>
+          <ol type="a">
+            <li>
+              <input type="radio" formControlName="48" value="a" />
+              Viendo una demostración.
+            </li>
+            <li>
+              <input type="radio" formControlName="49" value="b" />
+              Con instrucciones escritas, en un manual o libro de texto.
+            </li>
+            <li>
+              <input type="radio" formControlName="50" value="c" />
+              Escuchando a alguien explicarlo o haciendo preguntas.
+            </li>
+            <li>
+              <input type="radio" formControlName="51" value="d" />
+              Con esquemas y diagramas o pistas visuales.
+            </li>
+          </ol>
+          <p>
+            <strong
+              >14. Ud. Prefiere un maestro o conferencista que use:</strong
+            >
+          </p>
+          <ol type="a">
+            <li>
+              <input type="radio" formControlName="52" value="a" />
+              Demostraciones, modelos o sesiones prácticas.
+            </li>
+            <li>
+              <input type="radio" formControlName="53" value="b" />
+              Folletos, libros o lecturas.
+            </li>
+            <li>
+              <input type="radio" formControlName="54" value="c" />
+              Diagramas, esquemas o gráficos.
+            </li>
+            <li>
+              <input type="radio" formControlName="55" value="d" />
+              Preguntas y respuestas, pláticas y oradores invitados.
+            </li>
+          </ol>
+          <p>
+            <strong
+              >15. Un grupo de turistas quiere aprender acerca de parques o
+              reservas naturales en su área. Usted:</strong
+            >
+          </p>
+          <ol type="a">
+            <li>
+              <input type="radio" formControlName="56" value="a" />
+              Los acompaña a un parque o reserva natural.
+            </li>
+            <li>
+              <input type="radio" formControlName="57" value="b" />
+              Les da un libro o folleto acerca de parques o reservas naturales.
+            </li>
+            <li>
+              <input type="radio" formControlName="58" value="c" />
+              Les da una plática acerca de parques o reservas naturales.
+            </li>
+            <li>
+              <input type="radio" formControlName="59" value="d" />
+              Les muestra imágenes de Internet, fotos o libros con dibujos.
+            </li>
+          </ol>
+          <p>
+            <strong
+              >16. Usted tiene que hacer un discurso para una conferencia u
+              ocasión especial. Usted hace:</strong
+            >
+          </p>
+          <ol type="a">
+            <li>
+              <input type="radio" formControlName="60" value="a" />
+              Escribir el discurso y aprendérselo leyéndolo varias veces.
+            </li>
+            <li>
+              <input type="radio" formControlName="61" value="b" />
+              Reunir muchos ejemplos e historias para hacer el discurso
+              verdadero y práctico.
+            </li>
+            <li>
+              <input type="radio" formControlName="62" value="c" />
+              Escribir algunas palabras claves y practicar el discurso repetidas
+              veces.
+            </li>
+            <li>
+              <input type="radio" formControlName="63" value="d" />
+              Hacer diagramas o esquemas que te ayuden a explicar las cosas.
+            </li>
+          </ol>
+          <div
+            class="alert alert-danger alert-dismissible fade show"
+            role="alert"
+            *ngIf="varkTestForm.untouched"
+          >
+            ¡No has respondido ninguna pregunta!
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="mb-4">
+            <label class="form-label" for="name">Nombre: </label>
+            <input
+              type="text"
+              class="form-control"
+              style="width: 50%"
+              placeholder="Nombre"
+              id="name"
+              formControlName="name"
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="varkTestForm.untouched"
+            (click)="send()"
+          >
+            Enviar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

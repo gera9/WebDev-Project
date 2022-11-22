@@ -1,0 +1,951 @@
+<div class="row">
+  <div class="col-md-10 offset-md-1">
+    <div class="container-fluid jumbotron mb-5">
+      <h1 class="display-4">Prueba de Personalidad</h1>
+      <hr class="my-4" />
+      <p>
+        Evalúe cada par de opciones de las columnas usando del 0 al 10 para
+        calificar la que mejor le describe. Podra sentirse identificado con
+        cualidades de ambas columnas, pero tiene solo 10 puntos para repartir
+        entre cada una de las opciones
+        <span class="fw-bold">SIN UTILIZAR EL NÚMERO 5</span>.
+      </p>
+    </div>
+    <form class="table-responsive-sm" [formGroup]="personalityTestForm">
+      <h3 class="text-center">1. Energía, focalización y actitud vital</h3>
+      <table class="table border mt-1 mb-4">
+        <thead>
+          <tr>
+            <th scope="col"><h4>Extrovertido</h4></th>
+            <th scope="col">puntos</th>
+            <th scope="col"><h4>Introvertido</h4></th>
+            <th scope="col">puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Emprendedor y entusiasta</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="1"
+              />
+            </td>
+            <th scope="row">Reservado</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="2"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Actúa y luego piensa</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="3"
+              />
+            </td>
+            <th scope="row">Piensa y luego actúa</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="4"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Piensa en voz alta</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="5"
+              />
+            </td>
+            <th scope="row">Piensa en voz baja</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="6"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Tiene mucha energía</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="7"
+              />
+            </td>
+            <th scope="row">Energía tranquila</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="8"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Prefiere hacer varias cosas a la vez</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="9"
+              />
+            </td>
+            <th scope="row">Prefiere concentrarse en una cosa</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="10"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Habla más que escucha</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="11"
+              />
+            </td>
+            <th scope="row">Escucha más que habla</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="12"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Es fácil de conocer</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="13"
+              />
+            </td>
+            <th scope="row">Lleva una vida muy privada</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="14"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Puede distraerse con facilidad</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="15"
+              />
+            </td>
+            <th scope="row">Gran capacidad de concetración</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="16"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Le gusta rodearse de gente</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="17"
+              />
+            </td>
+            <th scope="row">Se siente aguso a solas</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="18"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><b>Total Extrovertido [E]</b></th>
+            <td>
+              <p class="mb-0">
+                <b>{{ outgoingPoints }} puntos</b>
+              </p>
+            </td>
+            <th scope="row"><b>Total Introvertido [I]</b></th>
+            <td>
+              <p class="mb-0">
+                <b>{{ introvertPoints }} puntos</b>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--Extrovertido&introvertido-->
+      <h3 class="text-center">
+        2. Manejo de la información y actitud ante el entorno
+      </h3>
+      <table class="table border mt-1 mb-4">
+        <thead>
+          <tr>
+            <th scope="col"><h4>Sensorial</h4></th>
+            <th scope="col">puntos</th>
+            <th scope="col"><h4>Intuitivo</h4></th>
+            <th scope="col">puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Confía en la experiencia propia</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="19"
+              />
+            </td>
+            <th scope="row">Confía en sus instintos</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="20"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Realista, ve lo que es</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="21"
+              />
+            </td>
+            <th scope="row">Imaginativo, ve lo que podria ser</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="22"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Utiliza destrezas ya aprendidas</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="23"
+              />
+            </td>
+            <th scope="row">Prefiere desarrollar nuevas destrezas</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="24"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Prefiere instrucciones detalladas</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="25"
+              />
+            </td>
+            <th scope="row">Gusta descubir las cosas por sí mismo</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="26"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Ve detalles y recuerda hechos</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="27"
+              />
+            </td>
+            <th scope="row">Percibe cualquier cosa nueva o diferente</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="28"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Admira soluciones prácticas</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="29"
+              />
+            </td>
+            <th scope="row">Admira soluciones creativas</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="30"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Se concentra en hechos especifícos</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="31"
+              />
+            </td>
+            <th scope="row">Tiene ideas y visión de conjunto</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="32"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Trabaja a un ritmo unifomre</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="33"
+              />
+            </td>
+            <th scope="row">Trabaja en rafagas de energia</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="34"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Vive en el aqui y el ahora</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="35"
+              />
+            </td>
+            <th scope="row">Piensa en las implicaciones futuras</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="36"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><b>Total Sensorial [S]</b></th>
+            <td>
+              <p class="mb-0">
+                <b>{{ sensoryPoints }} puntos</b>
+              </p>
+            </td>
+            <th scope="row"><b>Total Intuitivo [N]</b></th>
+            <td>
+              <p class="mb-0">
+                <b>{{ intuitivePoints }} puntos</b>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--Sensorial&intuitivo-->
+      <h3 class="text-center">3. Actitud y toma de decisiones</h3>
+      <table class="table border mt-1 mb-4">
+        <thead>
+          <tr>
+            <th scope="col"><h4>Racional</h4></th>
+            <th scope="col">puntos</th>
+            <th scope="col"><h4>Emocional</h4></th>
+            <th scope="col">puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Tiende a ver defectos ajenos</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="37"
+              />
+            </td>
+            <th scope="row">Tiende a ver cualidades ajenas</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="38"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Se convence con la logica</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="39"
+              />
+            </td>
+            <th scope="row">Se convence por sus sensaciones</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="40"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Aparenta ser frío y reservado</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="41"
+              />
+            </td>
+            <th scope="row">Aparenta ser cálido y amoroso</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="42"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Toma decisiones objetivamente</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="43"
+              />
+            </td>
+            <th scope="row">Decide por sus valores y sensaciones</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="44"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">No toma las cosas personalmente</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="45"
+              />
+            </td>
+            <th scope="row">Toma muchas cosas personalmente</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="46"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Es motivado por las metas</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="47"
+              />
+            </td>
+            <th scope="row">Es motivado por el reconocimiento</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="48"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Honesto y directo</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="49"
+              />
+            </td>
+            <th scope="row">Diplomatico y con mucho tacto</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="50"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Valora la honestidad y la justicia</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="51"
+              />
+            </td>
+            <th scope="row">Valora la armonia y la compasión</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="52"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Argumenta o debate por diversión</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="53"
+              />
+            </td>
+            <th scope="row">Evita discuciones y conflictos</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="54"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><b>Total Racional [T]</b></th>
+            <td>
+              <p class="mb-0">
+                <b>{{ rationalPoints }} puntos</b>
+              </p>
+            </td>
+            <th scope="row"><b>Total Emocional [F]</b></th>
+            <td>
+              <p class="mb-0">
+                <b>{{ emotionalPoints }} puntos</b>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--Racional&emocional-->
+      <h3 class="text-center">
+        4. Ambiente de trabajo, estilo de vida en el entorno e interacción
+      </h3>
+      <table class="table border mt-1 mb-4">
+        <thead>
+          <tr>
+            <th scope="col"><h4>Calificador</h4></th>
+            <th scope="col">puntos</th>
+            <th scope="col"><h4>Perseptivo</h4></th>
+            <th scope="col">puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Trabaja primero, juega después</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="55"
+              />
+            </td>
+            <th scope="row">Juega primero, trabaja después</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="56"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Prefiere terminar proyectos</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="57"
+              />
+            </td>
+            <th scope="row">Prefiere empezar proyectos</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="58"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Se siente agusto llevando sus agendas</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="59"
+              />
+            </td>
+            <th scope="row">Desea la libertad de la espontaneidad</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="60"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Le gusta tomar desiciones</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="61"
+              />
+            </td>
+            <th scope="row">Pospone algunas decisiones, si puede</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="62"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Presta atencion al timepo, puntualidad</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="63"
+              />
+            </td>
+            <th scope="row">Menos consciente del timepo, impuntual</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="64"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Le gusta hacer y atenerse a planes</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="65"
+              />
+            </td>
+            <th scope="row">Le gusta la flexibilidad en los planes</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="66"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Quiere que las cosas se decidan</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="67"
+              />
+            </td>
+            <th scope="row">Quiere tener opciones abiertas</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="68"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Serio y convencional</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="69"
+              />
+            </td>
+            <th scope="row">Relajado y poco convencional</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="70"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Justifica la mayoria de las reglas</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="71"
+              />
+            </td>
+            <th scope="row">Cuestiona muchas reglas</th>
+            <td>
+              <input
+                type="number"
+                min="0"
+                max="10"
+                value="0"
+                formControlName="72"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><b>Total Calificador [J]</b></th>
+            <td>
+              <p class="mb-0">
+                <b>{{ qualifierPoints }} puntos</b>
+              </p>
+            </td>
+            <th scope="row"><b>Total Perceptivo [P]</b></th>
+            <td>
+              <p class="mb-0">
+                <b>{{ perceptualPoints }} puntos</b>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="!isValid"
+      >
+        ¡No has respondido ninguna pregunta!
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="mb-4">
+        <label class="form-label" for="name">Nombre: </label>
+        <input
+          type="text"
+          class="form-control"
+          style="width: 50%"
+          placeholder="Nombre"
+          id="name"
+          formControlName="name"
+        />
+      </div>
+      <button type="submit" (click)="onSubmit()" class="btn btn-primary">
+        Enviar
+      </button>
+    </form>
+  </div>
+</div>
