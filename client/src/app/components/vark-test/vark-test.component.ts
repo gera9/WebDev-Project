@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ScoresService } from 'src/app/services/scores/scores.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-vark-test',
@@ -102,7 +103,7 @@ export class VarkTestComponent implements OnInit {
   public send() {
     let r = this.calculate();
     this.scoresService
-      .saveScore({
+      .saveVark({
         name: this.varkTestForm.controls.name.value,
         v: r.v,
         a: r.a,
@@ -110,7 +111,21 @@ export class VarkTestComponent implements OnInit {
         k: r.k,
       })
       .subscribe({
-        next: (res) => alert('Datos guardados!'),
+        next: (res) => {
+          swal.fire(
+            '¡Datos guardados!',
+            'Tu personalidad es: ' +
+              'V: ' +
+              r.v +
+              ' A: ' +
+              r.a +
+              ' R: ' +
+              r.r +
+              ' K: ' +
+              r.k,
+            'success'
+          );
+        },
         error(err) {
           console.log(err);
         },

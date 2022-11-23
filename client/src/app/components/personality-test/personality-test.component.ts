@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ScoresService } from 'src/app/services/scores/scores.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-personality-test',
@@ -104,16 +105,21 @@ export class PersonalityTestComponent implements OnInit {
       this.isValid = this.personalityTestForm.valid;
       return;
     }
+
     this.calculate();
 
     this.scoreService
-      .saveScore({
+      .savePersonality({
         name: this.personalityTestForm.controls.name.value,
         result: this.getResult(),
       })
       .subscribe({
         next: () => {
-          alert(this.getResult());
+          swal.fire(
+            '¡Datos guardados!',
+            'Tu personalidad es: ' + this.getResult(),
+            'success'
+          );
         },
         error(err) {
           console.error(err);

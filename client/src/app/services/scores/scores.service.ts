@@ -15,7 +15,14 @@ export class ScoresService {
   constructor(private http: HttpClient) {}
 
   public saveScore(score: any): Observable<any> {
-    console.log(score);
     return this.http.post(AUTH_API + 'save-score', score, httpOptions);
+  }
+
+  public saveVark(data: any): Observable<any> {
+    return this.http.post(AUTH_API + 'save-vark', data, httpOptions);
+  }
+
+  public savePersonality(data: any): Observable<any> {
+    return this.http.post(AUTH_API + 'save-personality', data, httpOptions);
   }
 }

@@ -29,6 +29,8 @@ func main() {
 	r.HandleFunc("/active-global-user", activeGlobalUser)
 	r.HandleFunc("/get-active-global-user", getActiveGlobalUser)
 	r.HandleFunc("/save-score", saveScore)
+	r.HandleFunc("/save-vark", saveVark)
+	r.HandleFunc("/save-personality", savePersonality)
 
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(200)
@@ -154,4 +156,56 @@ func saveScore(w http.ResponseWriter, r *http.Request) {
 
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(resUser)
+}
+
+func saveVark(w http.ResponseWriter, r *http.Request) {
+	reqVark := new(models.Vark)
+
+	err := json.NewDecoder(r.Body).Decode(reqVark)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"error": err.Error(),
+		})
+		return
+	}
+
+	resVark, err := storage.NewVark(*reqVark)
+	if err != nil {
+		fmt.Println(err.Error())
+		w.WriteHeader(http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"error": err.Error(),
+		})
+		return
+	}
+
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(resVark)
+}
+
+func savePersonality(w http.ResponseWriter, r *http.Request) {
+	reqPersonality := new(models.Personality)
+
+	err := json.NewDecoder(r.Body).Decode(reqPersonality)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"error": err.Error(),
+		})
+		return
+	}
+
+	resPersonality, err := storage.NewPersonality(*reqPersonality)
+	if err != nil {
+		fmt.Println(err.Error())
+		w.WriteHeader(http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"error": err.Error(),
+		})
+		return
+	}
+
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(resPersonality)
 }
