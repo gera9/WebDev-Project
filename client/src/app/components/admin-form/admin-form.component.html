@@ -1,0 +1,62 @@
+<div class="row mt-4">
+  <div class="col-md-6 offset-md-3">
+    <div class="card">
+      <div class="card-body">
+        <form [formGroup]="newAdminForm">
+          <div class="mb-3">
+            <label for="emailInput" class="form-label">Usuario</label>
+            <input
+              type="email"
+              class="form-control"
+              id="emailInput"
+              formControlName="username"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="passwordInput" class="form-label">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="passwordInput"
+              formControlName="password"
+            />
+          </div>
+          <div
+            class="alert alert-danger alert-dismissible fade show"
+            role="alert"
+            *ngIf="userNameError"
+          >
+            {{ userNameMessageError }}
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div
+            class="alert alert-danger alert-dismissible fade show"
+            role="alert"
+            *ngIf="userPasswordError"
+          >
+            {{ userPasswordMessageError }}
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+          <button
+            type="submit"
+            (click)="onClick()"
+            class="btn btn-primary"
+            id="loginButton"
+          >
+            Agregar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
