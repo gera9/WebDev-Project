@@ -1,0 +1,46 @@
+<div class="container mt-4 table-responsive">
+  <table class="table">
+    <thead class="table-primary">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre Usuario</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Departamento</th>
+        <th scope="col">Eliminar VARK</th>
+        <th scope="col">Eliminar Personalidad</th>
+        <th scope="col">Eliminar Usuario</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.department }}</td>
+        <td>
+          <button
+            [disabled]="user.varkResult === 'null'"
+            class="btn btn-warning"
+            (click)="deleteVark(user._id)"
+          >
+            Eliminar
+          </button>
+        </td>
+        <td>
+          <button
+            [disabled]="user.personalityResult === 'null'"
+            class="btn btn-warning"
+            (click)="deletePersonality(user._id)"
+          >
+            Eliminar
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteUser(user._id)">
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,14 +1,19 @@
-FROM golang:1.19
+# syntax=docker/dockerfile:1
+FROM golang:1.19-alpine
 
-RUN apt-get update && apt-get install -y libvips libvips-dev
+WORKDIR /app
 
-WORKDIR /usr/src/app
-
-# pre-copy/cache go.mod for pre-downloading dependencies and only redownloading them in subsequent builds if they change
+# Download necessary Go modules.
 COPY go.mod go.sum ./
 RUN go mod download && go mod verify
 
-COPY . .
-RUN go build -v -o /usr/local/bin/app ./cmd/main.go
+## Download development dependencies.
+# Download Air and add it to path.
+RUN go install github.com/cosmtrek/air@latest \
+    && echo "alias air='~/go/bin/air'" >> ~/.bashrc
 
-CMD ["app"]
+# Copy source code.
+COPY . .
+
+# Run by using air.
+CMD [ "air", "-c", ".air.toml" ]

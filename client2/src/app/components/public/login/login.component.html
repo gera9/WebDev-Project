@@ -1,0 +1,86 @@
+<app-public-header></app-public-header>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-xs-12 offset-xs-0 col-md-6 offset-md-3">
+      <form [formGroup]="userForm">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Correo Electrónico</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            formControlName="email"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Contraseña</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            formControlName="password"
+          />
+        </div>
+        <div class="mb-3 form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="exampleCheck1"
+            formControlName="isAdmin"
+          />
+          <label class="form-check-label" for="exampleCheck1"
+            >Soy adminitstrador</label
+          >
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          role="alert"
+          *ngIf="userForm.controls['email'].invalid"
+        >
+          <strong>¡Correo Electrónico Inválido!</strong> Verifica el correo que
+          ingresaste.
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          role="alert"
+          *ngIf="userForm.controls['password'].invalid"
+        >
+          <strong>¡Contraseña Inválida!</strong> La contraseña debería de
+          contener:
+          <br />
+          - Longitud mínima de 8 caracteres.
+          <br />
+          - Debería de contener al menos un caracter en mayúscula, minúscula y
+          un número.
+          <br />
+          - Puede contener caracteres especiales.
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+          (click)="login()"
+          [disabled]="userForm.invalid"
+        >
+          Enviar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,139 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-xs-12 offset-xs-0 col-md-6 offset-md-3">
+      <form [formGroup]="userForm">
+        <div class="mb-3">
+          <label for="exampleInputUsernameUpdate" class="form-label"
+            >Nombre de Usuario</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputUsernameUpdate"
+            formControlName="username"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1Update" class="form-label"
+            >Correo Electrónico</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1Update"
+            formControlName="email"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1Update" class="form-label"
+            >Contraseña</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1Update"
+            formControlName="password"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputDepartmentUpdate" class="form-label"
+            >Departamento</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputDepartmentUpdate"
+            formControlName="department"
+          />
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          role="alert"
+          *ngIf="userForm.controls['username'].invalid"
+        >
+          <strong>¡Nombre Usuario Inválido!</strong> Los nombres de usuario
+          pueden contener caracteres a-z, 0-9, guiones bajos y puntos. El nombre
+          de usuario no puede comenzar con un punto ni terminar con un punto.
+          Tampoco debe tener más de un período secuencialmente. La longitud
+          máxima es de 30 caracteres.
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          role="alert"
+          *ngIf="userForm.controls['email'].invalid"
+        >
+          <strong>¡Correo Electrónico Inválido!</strong> Verifica el correo que
+          ingresaste.
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          role="alert"
+          *ngIf="userForm.controls['password'].invalid"
+        >
+          <strong>¡Contraseña Inválida!</strong> La contraseña debería de
+          contener:
+          <br />
+          - Longitud mínima de 8 caracteres.
+          <br />
+          - Debería de contener al menos un caracter en mayúscula, minúscula y
+          un número.
+          <br />
+          - Puede contener caracteres especiales.
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          role="alert"
+          *ngIf="userForm.controls['department'].invalid"
+        >
+          <strong>¡Departamento Inválido!</strong> Sólo puedes colocar EDI o
+          Facturacion.
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="row">
+          <div class="col-md-6 d-flex justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-primary mb-4"
+              (click)="sendData()"
+              [disabled]="userForm.invalid"
+            >
+              Enviar
+            </button>
+          </div>
+          <div class="col-md-6 d-flex justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-warning mb-4"
+              (click)="search()"
+            >
+              Buscar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

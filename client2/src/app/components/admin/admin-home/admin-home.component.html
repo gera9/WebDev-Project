@@ -1,0 +1,35 @@
+<app-admin-header></app-admin-header>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 mb-4" [formGroup]="configGroup">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Activar Tests</label
+      >
+      <select
+        id="exampleFormControlInput1"
+        class="form-select"
+        aria-label="Default select example"
+        formControlName="selectedDepartment"
+        (change)="onChange()"
+      >
+        <option selected>Selecciona un área</option>
+        <option value="1">Todas</option>
+        <option value="2">Ninguna</option>
+        <option value="3">EDI</option>
+        <option value="4">Factura</option>
+      </select>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div class="row">
+        <div class="col-sm-6">
+          <p>Visitas del test de VARK</p>
+          <p>{{ varkVisits }}</p>
+        </div>
+        <div class="col-sm-6">
+          <p>Visitas del test de Personalidad</p>
+          <p>{{ personalityVisits }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

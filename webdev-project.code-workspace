@@ -5,6 +5,12 @@
     },
     {
       "path": "server"
+    },
+    {
+      "path": "client2"
+    },
+    {
+      "path": "py-pdf"
     }
   ],
   "settings": {}
